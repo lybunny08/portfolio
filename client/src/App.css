@@ -59,6 +59,13 @@
   font-size: 8.10648px;
 }
 
+.opacity-50 {
+  opacity: 0.5;
+}
+
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
