@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Appbar() {
   return (
-    <div className="fixed top-0 left-0 w-full">
-      <div className="flex justify-around items-center pt-4 m-3">
+    <div className="fixed top-0 left-0 w-full bg-[#F0F0F0]">
+      <div className="flex justify-around items-center pt-8 m-3">
         {/* Logo */}
         <span className="font-bold">Mamitiana Lydien</span>
         
