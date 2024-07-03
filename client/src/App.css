@@ -1,48 +1,9 @@
-@import 'splitting/dist/splitting.css';
-
 @font-face {
   font-family: 'Roxborough CF';
   src: url('./assets/fonts/RoxboroughCF-BoldItalic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
 }
-
-/* Ajoutez vos styles d'animation ici, par exemple */
-.hello-title .char {
-  display: inline-block;
-  position: relative;
-  opacity: 0;
-  transform: translateY(0px,0px);
-  animation: fadeUp 0.5s forwards;
-}
-
-.hello-title .char::before,
-.hello-title .char::after {
-  content: attr(data-char);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: transparent;
-  text-shadow: 0 0 10px rgba(0,0,0,0.5);
-  animation: fadeUpShadow 1s forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translate(0px , 0px);
-  }
-}
-
-@keyframes fadeUpShadow {
-  to {
-    text-shadow: 0 0 0 rgba(0,0,0,0);
-  }
-}
-
- /*  */
 
 .font-sec {
   font-family: 'Roxborough CF', serif;
@@ -63,10 +24,129 @@
   opacity: 0.5;
 }
 
+/*  */
+.hello-wrap {
+  text-align: center;
+}
 
+.hello-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hello-title {
+  font-size: 150px;
+  --word-total: 2;
+  --char-total: 13;
+}
+
+.splitting .char {
+  --char-percent: calc(var(--char-index) / var(--char-total));
+  --char-offset: calc(var(--char-index) - (var(--char-total) / 2));
+  --distance: calc((var(--char-offset) * var(--char-offset)) / (var(--char-total) / 2));
+  --distance-sine: calc(var(--char-offset) / (var(--char-total) / 2));
+  --distance-percent: calc((var(--distance) / (var(--char-total) / 2)));
+}
+
+.splitting .char {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.hello-title:hover .char {
+  transform: translate(
+    calc(var(--distance-percent) * 50px),
+    calc(var(--distance-sine) * -15px)
+  );
+}
+
+.hello-sub {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.hello-sub span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.hello-title:hover + .hello-sub span {
+  transform: translateY(10px);
+}
+
+
+/*  */
+.dynamic-text {
+  mix-blend-mode: difference;
+  color: white;
+}
+.light-bg {
+  color: black;
+}
+
+.dark-bg {
+  color: white;
+}
+
+/* .nav-logo__rotate {
+  animation: rotate 2s linear infinite;
+} */
+
+
+.colorMobile {
+  color: #1C1C1C;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.section-hover-effect {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.section-hover-effect .menu-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: transform 0.5s ease;
+}
+
+.section-hover-effect .menu-item:hover {
+  transform: scale(1.05);
+}
+
+.section-hover-effect .menu-item:hover .menu-number {
+  color: white;
+}
+
+.section-hover-effect .menu-item:hover .menu-link {
+  color: white;
+}
+
+.section-hover-effect:hover {
+  background-color: black;
+}
+
+.section-hover-effect:hover .menu-item {
+  color: white;
+}
+
+.underlined-text {
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-underline-offset: 20px;
+}
 
