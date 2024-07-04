@@ -5,12 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontSize: {
-        '140px': '140px', // Taille de texte personnalisée
-      },
-      colors: {
-        'custom-color': '#1C1C1C',
-      },
     },
   },
   plugins: [],

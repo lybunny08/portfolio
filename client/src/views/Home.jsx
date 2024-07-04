@@ -8,13 +8,14 @@ import Creator from '../assets/Website Creator.gif'
 import facebook from '../assets/facebook-logo.png'
 import github from '../assets/github.png'
 import linkedIn from '../assets/linkedIn-logo.png'
+import {gsap} from 'gsap'
 
-function Home() {
+function Home () { 
 
   return (
-    <div className="min-h-screen bg-[#ebebeb] flex flex-col pt-10">
+    <div className="min-h-screen bg-[#ebebeb] flex flex-col pt-20">
         
-      <div style={{ textAlign: 'center' }} className="flex flex-row items-center justify-center text-[140px]">
+      <div style={{ textAlign: 'center' }} className="flex flex-row items-center justify-center text-[120px]">
           <span className="font-sec">Hajaniaina</span>
           <span className='pl-4'>Lydien</span>
       </div>
