@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #000;
   --foreground: #171717;
 }
 
@@ -12,15 +12,34 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+.font-regular{
+  font-family: "Neue Montreal";
+  src: url("../public/assets/fonts/NeueMontreal-Regular.woff");
+}
+
+.font-medium{
+  font-family: "Neue Montreal";
+  src: url("../public/assets/fonts/NeueMontreal-Medium.woff");
+}
+
+.font-bold{
+  font-family: "Neue Montreal";
+  src: url("../public/assets/fonts/NeueMontreal-Bold.woff");
+}
+
+/* h1{
+  font-size: clamp(22px, 8vw - 0.5rem, 24px);
+} */
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Neue Montreal, sans-serif;
 }
