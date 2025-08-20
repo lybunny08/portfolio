@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, Children, cloneElement } from 'react';
+"use client"
+import { useRef, useEffect, Children, cloneElement } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
@@ -49,6 +50,7 @@ function TextReveal({ children, animationOnScroll = true, delay = 0 }) {
       lines.current.push(...split.lines);
     });
 
+    // gsap.set(lines.current, { y: '100%' });
     gsap.set(lines.current, { y: '100%' });
 
     const animationProps = {
