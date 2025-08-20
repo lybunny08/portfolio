@@ -7,7 +7,7 @@ export default function Navbar() {
     <div className="fixed w-full top-[21px] z-20">
 			<nav className="flex flex-wrap space-y-[16px] md:space-y-0 md:flex-row w-full justify-between items-center px-[15px] md:px-[30px]">
 				{/* Logo */}
-				<span className="hidden sm:block dragable uppercase text-[#cacaca] text-[16px] md:text-[24px] font-extrabold">
+				<span className="hidden sm:block uppercase text-[#cacaca] text-[16px] md:text-[24px] font-extrabold">
 					Hajaniaina
 				</span>
 				{/* Nav + Availability pour md et lg */}
