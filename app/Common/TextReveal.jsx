@@ -50,7 +50,7 @@ function TextReveal({ children, animationOnScroll = true, delay = 0 }) {
       lines.current.push(...split.lines);
     });
 
-    // gsap.set(lines.current, { y: '100%' });
+
     gsap.set(lines.current, { y: '100%' });
 
     const animationProps = {
